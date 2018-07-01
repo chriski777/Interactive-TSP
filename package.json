@@ -1,16 +1,30 @@
 {
-  "name": "interactive-tsp",
-  "version": "0.0.0",
-  "private": true,
+  "name": "interactive_tsp",
+  "version": "0.0.1",
+  "description": "An app for visualization of TSP algorithms",
+  "engines": {
+    "node": "8.9.1"
+  },
+  "main": "index.js",
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node index.js",
+    "test": "node test.js"
   },
   "dependencies": {
-    "cookie-parser": "~1.4.3",
-    "debug": "~2.6.9",
-    "express": "~4.16.0",
-    "http-errors": "~1.6.2",
-    "morgan": "~1.9.0",
-    "pug": "2.0.0-beta11"
-  }
+    "ejs": "^2.5.6",
+    "express": "^4.15.2"
+  },
+  "devDependencies": {
+    "request": "^2.81.0",
+    "tape": "^4.7.0"
+  },
+  "repository": {
+    "type": "git"
+  },
+  "keywords": [
+    "node",
+    "heroku",
+    "express"
+  ],
+  "license": "UNLICENSED"
 }
