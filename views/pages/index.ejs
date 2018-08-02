@@ -1,23 +1,41 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <% include ../partials/header.ejs %>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script src="javascript/sigma.min.js"></script>
+  <script src="javascript/graphStuff.js"></script>
+  <link href='http://fonts.googleapis.com/css?family=Lato:300,700' rel='stylesheet' type='text/css'>
+  <script src="javascript/sigma.plugins.dragNodes.js"></script>
 </head>
 
 <body>
-
   <% include ../partials/nav.ejs %>
-
-<div class="jumbotron text-center">
-  <div class="container">
-    <h1>TSP Visualization</h1>
-    <p>This is a blah.</p>
-    <a type="button" class="btn btn-lg btn-default" href="#"></span> Getting Started</a>
-    <a type="button" class="btn btn-lg btn-primary" href="#"></span> YAH</a>
+<div id="container">
+  <div id="graph-container"></div>
+    <!-- From filters.html of Sigma examples-->
+    
+    <!-- SideBar Starts Here-->
+    <div id="sidebar">
+    <h2 class="underline">TSP Visualization</h2>
+    <div>
+      <h3>min degree <span id="min-degree-val">0</span></h3>
+      0 <input id="min-degree" type="range" min="0" max="0" value="0"> <span id="max-degree-value">0</span><br>
+    </div>
+    <div>
+      <h3>node category</h3>
+      <select id="node-category">
+        <option value="" selected>All categories</option>
+      </select>
+    </div>
+    <span class="line"></span>
+    <div>
+      <button id="reset-btn">Initialize Random</button>
+      <button id="export-btn">Export</button>
+    </div>
+    <div id="dump" class="hidden"></div>
   </div>
 </div>
-
-
-
 </body>
 </html>
