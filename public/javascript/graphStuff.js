@@ -25,7 +25,6 @@ $(document).ready(function() {
       size: getRandInterval(0.5,1),
       color: '#ccc'
     });
-
   // Instantiate sigma:
   s = new sigma({
     graph: g,

@@ -7,7 +7,7 @@ body {
   top: 3.75em;
   bottom: 0;
   left: 0;
-  right: 0px;
+  right: 315px;
   position: absolute;
 }
 #sidebar {
@@ -44,12 +44,4 @@ h2.underline {
   border-radius: 2px;
   padding: 8px 12px;
   font-weight: 700;
-}
-.hidden {
-  display: none;
-  visibility: hidden;
-}
-
-input[type=range] {
-  width: 160px;
 }

@@ -14,6 +14,37 @@
 <div id="container">
   <div id="graph-container"></div>
     <!-- From filters.html of Sigma examples-->
+    <!-- SideBar Starts Here-->
+    <div id="sidebar">
+    <h2 class="underline">TSP Visualization</h2>
+    <div>
+      <h3>Initialize Dataset</h3>
+		<button id="initRand-btn">Initialize Random</button>
+		<button id="upload-btn">Upload Adjacency Matrix</button>
+		<button id="draw-btn">Draw Graph</button>
+      <h3>Current Visualization</h3>
+      <select id="node-category">
+        <option value="" selected>Random</option>
+		<option value="" >Nearest Neighbor</option>
+        <option value="" >Greedy</option>
+        <option value="" >Convex Hull</option>
+        <option value="" >Christofides</option>
+      </select>
+      <h3> Approximations </h3>
+	    <input type="checkbox" name="approxAlg" value="Random"> Random<br>
+	    <input type="checkbox" name="approxAlg" value="NearestN"> Nearest Neighbor<br>
+	    <input type="checkbox" name="approxAlg" value="Greedy"> Greedy<br>
+	    <input type="checkbox" name="approxAlg" value="ConvexHull"> Convex Hull<br>
+	    <input type="checkbox" name="approxAlg" value="Christofides"> Christofides<br>
+      <h3>Bounds </h3>
+      	<input type="checkbox" name="approxAlg" value="HKLB"> Held-Karp Lower Bound<br>
+      	<input type="checkbox" name="approxAlg" value="OTLB"> OneTree Lower Bound<br>
+      	<input type="checkbox" name="approxAlg" value="MSTUB"> MST Upper Bound<br>
+    </div>
+    <span class="line"></span>
+    <div>
+      <button id="calc-btn">Calculate</button>
+    </div>
 </div>
 </body>
 </html>
