@@ -1,2 +1,2 @@
-#Interactive TSP
-## Just run 'npm start' to run
+# Interactive TSP
+Run 'npm start' to run
