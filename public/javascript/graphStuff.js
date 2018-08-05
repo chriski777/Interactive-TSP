@@ -1,7 +1,7 @@
 $(document).ready(function() {
   var i,
       s,
-      N = 10,
+      N = 20,
       E = 100,
       g = {
         nodes: [],

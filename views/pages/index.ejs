@@ -24,11 +24,22 @@
       <h4>Initialize Dataset</h4>
 		<button id="initRand-btn">Initialize Random</button>
     <!-- ui-dialog -->
-      <div id="rand-dialog" title="Dialog Title">
-        <p>What's good</p>
+      <div id="rand-dialog" title="Initialize Random Graph">
+        <p>Select the number of nodes you would like in your graph.</p>
+          <div id="node-slider"></div>
+          # Nodes <br/>
+          <input />
       </div>
 		<button id="upload-btn">Upload Adjacency Matrix</button>
+    <!-- ui-dialog -->
+      <div id="adj-dialog" title="Upload Adjacency Matrix File">
+        <p>Please upload an adjacency file.</p>
+      </div>
 		<button id="draw-btn">Draw Graph</button>
+    <!-- ui-dialog -->
+      <div id="draw-dialog" title="Draw Your Own Graph">
+        <p>Select the number of nodes you would like in your graph.</p>
+      </div>
       <h4>Current Visualization</h4>
       <select id="node-category">
         <option value="" selected>Random</option>
