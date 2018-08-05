@@ -1,6 +1,6 @@
 body {
   color: #333;
-  font-size: 14px;
+  font-size: 12px;
   font-family: Lato, sans-serif;
 }
 #graph-container {
@@ -10,6 +10,7 @@ body {
   right: 315px;
   position: absolute;
 }
+
 #sidebar {
   right: 10px;
   position: absolute;
