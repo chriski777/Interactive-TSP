@@ -3,11 +3,11 @@
 
 <head>
   <% include ../partials/header.ejs %>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-  <script src="javascript/sigma.min.js"></script>
-  <script src="javascript/graphStuff.js"></script>
-  <script src="javascript/webpage.js"></script>
-  <script src="javascript/jquery-ui.min.js"></script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script type="text/javascript" src="javascript/sigma.min.js"></script>
+  <script type="text/javascript" src="javascript/graphStuff.js"></script>
+  <script type="text/javascript" src="javascript/webpage.js"></script>
+  <script type="text/javascript" src="javascript/jquery-ui.min.js"></script>
   <link rel="stylesheet" type="text/css" href="stylesheets/jquery-ui.min.css" />
   <link href='http://fonts.googleapis.com/css?family=Lato:300,700' rel='stylesheet' type='text/css'>
 </head>
@@ -25,10 +25,10 @@
 		<button id="initRand-btn">Initialize Random</button>
     <!-- ui-dialog -->
       <div id="rand-dialog" title="Initialize Random Graph">
-        <p>Select the number of nodes you would like in your graph.</p>
+        <p>Select the number of nodes (1-500) you would like in your graph.</p>
           <div id="node-slider"></div>
           # Nodes <br/>
-          <input />
+          <input id = "node-input" />
       </div>
 		<button id="upload-btn">Upload Adjacency Matrix</button>
     <!-- ui-dialog -->
@@ -38,7 +38,7 @@
 		<button id="draw-btn">Draw Graph</button>
     <!-- ui-dialog -->
       <div id="draw-dialog" title="Draw Your Own Graph">
-        <p>Select the number of nodes you would like in your graph.</p>
+        <p>Select</p>
       </div>
       <h4>Current Visualization</h4>
       <select id="node-category">
