@@ -9,6 +9,7 @@
   <script type="text/javascript" src="javascript/webpage.js"></script>
   <script type="text/javascript" src="javascript/jquery-ui.min.js"></script>
   <link rel="stylesheet" type="text/css" href="stylesheets/jquery-ui.min.css" />
+  <link rel='stylesheet' href='/fa/css/all.css' />
   <link href='http://fonts.googleapis.com/css?family=Lato:300,700' rel='stylesheet' type='text/css'>
 </head>
 
@@ -34,6 +35,7 @@
     <!-- ui-dialog -->
       <div id="adj-dialog" title="Upload Adjacency Matrix File">
         <p>Please upload an adjacency file.</p>
+        <input id = 'upload-file' type = "file">
       </div>
 		<button id="draw-btn">Draw Graph</button>
     <!-- ui-dialog -->
@@ -42,8 +44,9 @@
       </div>
       <h4>Current Visualization</h4>
       <select id="node-category">
-        <option value="" selected>Random</option>
-		<option value="" >Nearest Neighbor</option>
+        <option value="" selected>Entire Graph</option>
+        <option value="" >Random</option>
+		    <option value="" >Nearest Neighbor</option>
         <option value="" >Greedy</option>
         <option value="" >Convex Hull</option>
         <option value="" >Christofides</option>

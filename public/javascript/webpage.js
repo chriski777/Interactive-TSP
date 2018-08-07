@@ -76,7 +76,7 @@ $(document).ready(function() {
 		width: 400,
 		buttons: [
 			{
-				text: "Initialize",
+				text: "Upload",
 				click: function() {
 					$( this ).dialog( "close" );
 				}
