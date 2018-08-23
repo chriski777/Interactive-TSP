@@ -45,3 +45,27 @@ h2.underline {
   padding: 8px 12px;
   font-weight: 700;
 }
+
+/*Drop stuff*/
+#adj-dialog p {
+    margin-top: 10px;
+}
+#drop-area {
+  border: 2px dashed #ccc;
+  border-radius: 20px;
+  width: 100%;
+  font-family: sans-serif;
+  padding: 20px;
+}
+#drop-area.highlight {
+  border-color: #2F4F4F;
+}
+#fileLabel {
+  border: 1px solid #ccc;
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+#upload-file {
+  display:none;
+}

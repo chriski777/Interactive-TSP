@@ -34,8 +34,11 @@
 		<button id="upload-btn">Upload Adjacency Matrix</button>
     <!-- ui-dialog -->
       <div id="adj-dialog" title="Upload Adjacency Matrix File">
-        <p>Please upload an adjacency file.</p>
-        <input id = 'upload-file' type = "file">
+        <p> Drag and Drop into the drop area below or select a file to upload.
+        <div id="drop-area">
+          <input id = 'upload-file' type = "file" >
+          <label id="fileLabel" for="upload-file">Open File</label>
+        </div>
       </div>
 		<button id="draw-btn">Draw Graph</button>
     <!-- ui-dialog -->

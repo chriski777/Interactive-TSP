@@ -70,6 +70,36 @@ $(document).ready(function() {
 	    console.log(nodeVal);
 	    $("#node-slider").slider("value", nodeVal);
 	});
+	//Adjacency Matrix File Upload
+	let dropArea = document.getElementById('drop-area');
+	// Add Event listeners for drag actions
+	;['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+  		dropArea.addEventListener(eventName, preventDefaults, false)
+	})
+	// Prevent opening of files when dropped
+	function preventDefaults (e) {
+  		e.preventDefault()
+  		e.stopPropagation()
+	}
+	//Highlight file upload area when in drag-area
+	;['dragenter', 'dragover'].forEach(eventName => {
+  		dropArea.addEventListener(eventName, highlight, false)
+	})
+	//Remove highlight file upload area when in drag-area
+	;['dragleave', 'drop'].forEach(eventName => {
+  		dropArea.addEventListener(eventName, unhighlight, false)
+	})
+	function highlight(e) {
+	  dropArea.classList.add('highlight')
+	}
+	function unhighlight(e) {
+	  dropArea.classList.remove('highlight')
+	}
+	$('#file-upload').change(function() {
+	  var i = $(this).prev('label').clone();
+	  var file = $('#file-upload')[0].files[0].name;
+	  $(this).prev('label').text(file);
+	});
 	//Adjacency matrix dialog
 	$( "#adj-dialog" ).dialog({
 		autoOpen: false,
