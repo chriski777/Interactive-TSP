@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
 	var minVal = 1;
-	var maxVal = 500;
+	var maxVal = 100;
 	// Get Started Dialog 
 	$( "#gs-dialog" ).dialog({
 		autoOpen: false,
@@ -35,7 +35,7 @@ $(document).ready(function() {
 				click: function() {
 					var currVal = $("#node-input").val()
 					if (!(Math.floor(currVal) == currVal && $.isNumeric(currVal) ) || (currVal > maxVal || currVal < minVal) ) {
-						alert("Please input an integer between 1 and 500.");
+						alert("Please input an integer between 1 and 100.");
 					} 
 					else {
 						console.log(currVal);
