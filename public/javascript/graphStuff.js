@@ -7,6 +7,12 @@ $(document).ready(function() {
 
 function drawNewGraph() {
   console.log("Drawing Mode");
+  // Make empty graph for drawing mode
+  var g = {
+        nodes: [],
+        edges: []
+  };
+  clearGraph(g, 'graph-container');
 }
 
 function initNewRandGraph(nodeNum) {
@@ -53,16 +59,21 @@ function initNewRandGraph(nodeNum) {
       };
     }
   }
+  clearGraph(g, 'graph-container');
+};
+
+function clearGraph(graph, c){
   //Clear and kill the past sigma instance
   if (!(typeof s === "undefined")) {
     s.kill()
   }
   // Instantiate sigma: 
   s = new sigma({
-    graph: g,
-    container: 'graph-container'
+    graph: graph,
+    container: c
   });
-};
+}
+
 
 function getRandInterval(min, max) {
   return Math.random() * (max - min) + min;

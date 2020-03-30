@@ -29,7 +29,7 @@ $(document).ready(function() {
 				click: function() {
 					var currVal = $("#node-input").val()
 					if (!(Math.floor(currVal) == currVal && $.isNumeric(currVal) ) || (currVal > maxVal || currVal < minVal) ) {
-						alert("Please input an integer between 1 and 100.");
+						alert("Please input an integer between 1 and ${maxVal}.");
 					} 
 					else {
 						console.log(currVal);
