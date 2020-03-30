@@ -21,6 +21,11 @@ body {
   margin: 10px;
   overflow-x: auto;
 }
+
+.drawing-mode {
+  display: none;
+}
+
 .line {
   clear: both;
   display: block;

@@ -1,5 +1,4 @@
 $(document).ready(function() {
-
   var i,
       s;
   initNewRandGraph(15);
@@ -13,6 +12,14 @@ function drawNewGraph() {
         edges: []
   };
   clearGraph(g, 'graph-container');
+  var drawingElements = document.getElementsByClassName('drawing-mode');
+  var nonDrawingElements = document.getElementsByClassName('non-drawing-mode');
+  for (var i = 0; i < drawingElements.length; i++){
+    drawingElements[i].style.display = 'block';
+  }
+  for (var i = 0; i < nonDrawingElements.length; i++){
+    nonDrawingElements[i].style.display = 'none';
+  }
 }
 
 function initNewRandGraph(nodeNum) {

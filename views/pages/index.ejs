@@ -15,61 +15,72 @@
 
 <body>
   <% include ../partials/nav.ejs %>
-<div id="container">
-  <div id="graph-container"></div>
+  <div id="container">
+    <div id="graph-container"></div>
     <!-- From filters.html of Sigma examples-->
     <!-- SideBar Starts Here-->
     <div id="sidebar">
-    <h2 class="underline">TSP Visualization</h2>
-    <div>
-      <h4>Initialize Dataset</h4>
-		<button id="initRand-btn">Initialize Random</button>
-    <!-- ui-dialog -->
-      <div id="rand-dialog" title="Initialize Random Graph">
-        <p>Select the number of nodes (1-100) you would like in your graph.</p>
-          <div id="node-slider"></div>
-          # Nodes <br/>
-          <input id = "node-input" />
+      <h2 class="underline">TSP Visualization</h2>
+      <div class = "drawing-mode"> 
+        <h4> Drawing Mode </h4>
+        <p> Click anywhere on the canvas to the left of this sidebar to add a node. </p>
+        <p> Once you're done, press Finish and your graph will be saved to the canvas. You can then perform calculations on the graph you created. </p> 
+        <p> If you'd like to go back to the main menu without drawing a graph, just press Cancel. </p>
       </div>
-		<button id="upload-btn">Upload Adjacency Matrix</button>
-    <!-- ui-dialog -->
-      <div id="adj-dialog" title="Upload Adjacency Matrix File">
-        <p> Drag and Drop into the drop area below or select a file to upload.
-        <div id="drop-area">
-          <input id = 'upload-file' type = "file" >
-          <label id="fileLabel" for="upload-file">Open File</label>
-        </div>
+      <div class = "non-drawing-mode">
+        <h4>Initialize Dataset</h4>
+    		<button id="initRand-btn">Initialize Random</button>
+        <!-- ui-dialog -->
+          <div id="rand-dialog" title="Initialize Random Graph">
+            <p>Select the number of nodes (1-100) you would like in your graph.</p>
+              <div id="node-slider"></div>
+              # Nodes <br/>
+              <input id = "node-input" />
+          </div>
+    		<button id="upload-btn">Upload Adjacency Matrix</button>
+        <!-- ui-dialog -->
+          <div id="adj-dialog" title="Upload Adjacency Matrix File">
+            <p> Drag and Drop into the drop area below or select a file to upload. </p>
+            <div id="drop-area">
+              <input id = 'upload-file' type = "file" >
+              <label id="fileLabel" for="upload-file">Open File</label>
+            </div>
+          </div>
+    		<button id="draw-btn">Draw Graph</button>
+        <!-- ui-dialog -->
+          <div id="draw-dialog" title="Draw Your Own Graph">
+            <p>Click on the canvas below to add nodes to your graph. </p>
+          </div>
+          <h4>Current Visualization</h4>
+          <select id="node-category">
+            <option value="" selected>Entire Graph</option>
+            <option value="" >Random</option>
+    		    <option value="" >Nearest Neighbor</option>
+            <option value="" >Greedy</option>
+            <option value="" >Convex Hull</option>
+            <option value="" >Christofides</option>
+          </select>
+          <h4> Approximations </h4>
+    	    <input type="checkbox" name="approxAlg" value="Random"> Random<br>
+    	    <input type="checkbox" name="approxAlg" value="NearestN"> Nearest Neighbor<br>
+    	    <input type="checkbox" name="approxAlg" value="Greedy"> Greedy<br>
+    	    <input type="checkbox" name="approxAlg" value="ConvexHull"> Convex Hull<br>
+    	    <input type="checkbox" name="approxAlg" value="Christofides"> Christofides<br>
+          <h4>Bounds </h4>
+        	<input type="checkbox" name="approxAlg" value="HKLB"> Held-Karp Lower Bound<br>
+        	<input type="checkbox" name="approxAlg" value="OTLB"> OneTree Lower Bound<br>
+        	<input type="checkbox" name="approxAlg" value="MSTUB"> MST Upper Bound<br>
       </div>
-		<button id="draw-btn">Draw Graph</button>
-    <!-- ui-dialog -->
-      <div id="draw-dialog" title="Draw Your Own Graph">
-        <p>Click on the canvas below to add nodes to your graph. </p>
+      <span class="line"></span>
+      <div class = "drawing-mode">
+        <button id="finish-draw-btn">Finish</button>
+        <button id="cancel-draw-btn">Cancel</button>
       </div>
-      <h4>Current Visualization</h4>
-      <select id="node-category">
-        <option value="" selected>Entire Graph</option>
-        <option value="" >Random</option>
-		    <option value="" >Nearest Neighbor</option>
-        <option value="" >Greedy</option>
-        <option value="" >Convex Hull</option>
-        <option value="" >Christofides</option>
-      </select>
-      <h4> Approximations </h4>
-	    <input type="checkbox" name="approxAlg" value="Random"> Random<br>
-	    <input type="checkbox" name="approxAlg" value="NearestN"> Nearest Neighbor<br>
-	    <input type="checkbox" name="approxAlg" value="Greedy"> Greedy<br>
-	    <input type="checkbox" name="approxAlg" value="ConvexHull"> Convex Hull<br>
-	    <input type="checkbox" name="approxAlg" value="Christofides"> Christofides<br>
-      <h4>Bounds </h4>
-      	<input type="checkbox" name="approxAlg" value="HKLB"> Held-Karp Lower Bound<br>
-      	<input type="checkbox" name="approxAlg" value="OTLB"> OneTree Lower Bound<br>
-      	<input type="checkbox" name="approxAlg" value="MSTUB"> MST Upper Bound<br>
+      <div class = "non-drawing-mode">
+        <button id="calc-btn">Calculate</button>
+      </div>
     </div>
-    <span class="line"></span>
-    <div>
-      <button id="calc-btn">Calculate</button>
-    </div>
-</div>
+  </div>
 </body>
 <% include ../partials/footer.ejs %>
 
