@@ -8,13 +8,7 @@ $(document).ready(function() {
 		width: 400,
 		buttons: [
 			{
-				text: "Okay",
-				click: function() {
-					$( this ).dialog( "close" );
-				}
-			},
-			{
-				text: "Cancel",
+				text: "Got it!",
 				click: function() {
 					$( this ).dialog( "close" );
 				}
@@ -132,6 +126,7 @@ $(document).ready(function() {
 				text: "Begin",
 				click: function() {
 					$( this ).dialog( "close" );
+					drawNewGraph()
 				}
 			},
 			{

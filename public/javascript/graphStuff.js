@@ -5,6 +5,10 @@ $(document).ready(function() {
   initNewRandGraph(15);
 });
 
+function drawNewGraph() {
+  console.log("Drawing Mode");
+}
+
 function initNewRandGraph(nodeNum) {
   var 
       minX,
