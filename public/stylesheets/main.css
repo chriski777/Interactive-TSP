@@ -82,3 +82,6 @@ h2.underline {
 .footer span {
   color: #6c757d;
 }
+.footer span .linkme:hover {
+  text-decoration: none;
+}
