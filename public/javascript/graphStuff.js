@@ -4,22 +4,40 @@ $(document).ready(function() {
   initNewRandGraph(15);
 });
 
+function toggleDrawMode(modeDict){
+  var drawingElements = document.getElementsByClassName('drawing-mode');
+  var nonDrawingElements = document.getElementsByClassName('non-drawing-mode');
+  for (var i = 0; i < drawingElements.length; i++){
+    drawingElements[i].style.display = modeDict['Drawing'];
+  }
+  for (var i = 0; i < nonDrawingElements.length; i++){
+    nonDrawingElements[i].style.display = modeDict['nonDrawing'];
+  }
+}
+
 function drawNewGraph() {
-  console.log("Drawing Mode");
+  console.log("Draw Mode");
   // Make empty graph for drawing mode
   var g = {
         nodes: [],
         edges: []
   };
   clearGraph(g, 'graph-container');
-  var drawingElements = document.getElementsByClassName('drawing-mode');
-  var nonDrawingElements = document.getElementsByClassName('non-drawing-mode');
-  for (var i = 0; i < drawingElements.length; i++){
-    drawingElements[i].style.display = 'block';
-  }
-  for (var i = 0; i < nonDrawingElements.length; i++){
-    nonDrawingElements[i].style.display = 'none';
-  }
+  var drawModeDict = {
+    'Drawing': 'block',
+    'nonDrawing': 'none'
+  };
+  toggleDrawMode(drawModeDict);
+}
+
+function cancelDrawGraph() {
+  console.log("Exiting Draw Mode");
+  initNewRandGraph(15);
+  var nonDrawModeDict = {
+    'Drawing': 'none',
+    'nonDrawing': 'block'
+  };
+  toggleDrawMode(nonDrawModeDict);
 }
 
 function initNewRandGraph(nodeNum) {
@@ -49,7 +67,6 @@ function initNewRandGraph(nodeNum) {
       size: getRandInterval(0.5,1),
       color: '#666'
     });
-  console.log(g.nodes);
   // Make sure it is a complete symmetric graph
   // Include 0's for node to itself
   var numEdges = 0;
