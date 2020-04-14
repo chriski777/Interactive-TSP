@@ -141,9 +141,8 @@ $(document).ready(function() {
 	$( "#cancel-draw-btn" ).click(function( event ) {
 		cancelDrawGraph();
 	});
-
 	// Buttons available in non-drawing mode
-	$( "#draw-btn" ).click(function( event ) {
+	document.getElementById('draw-btn').addEventListener('click', function(event){
 		$("#draw-dialog").dialog("open");
 		event.preventDefault();
 	});

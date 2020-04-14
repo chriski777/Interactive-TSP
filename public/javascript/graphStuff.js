@@ -4,7 +4,16 @@ $(document).ready(function() {
   initNewRandGraph(15);
 });
 
+function getMousePos(canvas, evt) {
+    var rect = canvas.getBoundingClientRect();
+    return {
+      x: evt.clientX - rect.left,
+      y: evt.clientY - rect.top
+    };
+}
+
 function toggleDrawMode(modeDict){
+  var drawingCanvas = document.querySelector('#graph-container');
   var drawingElements = document.getElementsByClassName('drawing-mode');
   var nonDrawingElements = document.getElementsByClassName('non-drawing-mode');
   for (var i = 0; i < drawingElements.length; i++){
@@ -13,6 +22,7 @@ function toggleDrawMode(modeDict){
   for (var i = 0; i < nonDrawingElements.length; i++){
     nonDrawingElements[i].style.display = modeDict['nonDrawing'];
   }
+  drawingCanvas.style.cursor = modeDict['canvas_cursor'];
 }
 
 function drawNewGraph() {
@@ -22,10 +32,11 @@ function drawNewGraph() {
         nodes: [],
         edges: []
   };
-  clearGraph(g, 'graph-container');
+  initGraph(g, 'graph-container');
   var drawModeDict = {
     'Drawing': 'block',
-    'nonDrawing': 'none'
+    'nonDrawing': 'none',
+    'canvas_cursor': 'crosshair',
   };
   toggleDrawMode(drawModeDict);
 }
@@ -35,7 +46,8 @@ function cancelDrawGraph() {
   initNewRandGraph(15);
   var nonDrawModeDict = {
     'Drawing': 'none',
-    'nonDrawing': 'block'
+    'nonDrawing': 'block',
+    'canvas_cursor': 'default',
   };
   toggleDrawMode(nonDrawModeDict);
 }
@@ -83,10 +95,10 @@ function initNewRandGraph(nodeNum) {
       };
     }
   }
-  clearGraph(g, 'graph-container');
+  initGraph(g, 'graph-container');
 };
 
-function clearGraph(graph, c){
+function initGraph(graph, c){
   //Clear and kill the past sigma instance
   if (!(typeof s === "undefined")) {
     s.kill()
